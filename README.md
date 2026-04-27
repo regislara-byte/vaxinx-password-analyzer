@@ -38,6 +38,19 @@ It then maps results into:
 
 CRITICAL → WEAK → MODERATE → STRONG
 
+## 📘 Academic Context
+
+This project applies concepts from:
+
+- NIST Password Guidelines
+- Cisco Cybersecurity Fundamentals
+
+It demonstrates how weak credentials increase risk of:
+
+- Brute force attacks
+- Credential stuffing
+- Dictionary attacks
+
 ## ⚠️ Security Note
 
 This tool runs entirely in your browser.  
