@@ -1,8 +1,8 @@
 # 🛡️ VAXINX Password Analyzer
 
-[![Status](https://img.shields.io/badge/status-active-brightgreen)]()
-[![Tech](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)]()
-[![Security](https://img.shields.io/badge/focus-cybersecurity-red)]()
+[![Status](https://img.shields.io/badge/status-active-brightgreen)
+[![Tech](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)
+[![Security](https://img.shields.io/badge/focus-cybersecurity-red)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-00f5ff?style=for-the-badge)](https://regislara-byte.github.io/vaxinx-password-analyzer/)
 
 > **Think like an attacker. Test like a defender.**
@@ -17,7 +17,7 @@
 
 ## 🚀 Live Demo
 
-👉 https://regislara-byte.github.io/vaxinx-password-analyzer/
+👉 [Live Demo](https://regislara-byte.github.io/vaxinx-password-analyzer/)
 
 ---
 
@@ -93,7 +93,6 @@ It then maps results into:
 
 🔴 CRITICAL → 🟠 WEAK → 🟡 MODERATE → 🟢 STRONG
 
-
 ---
 
 ## 📘 Academic Context
@@ -128,11 +127,11 @@ This project is inspired by established cybersecurity standards and educational 
 
 - National Institute of Standards and Technology (NIST)  
   Digital Identity Guidelines (SP 800-63)  
-  https://pages.nist.gov/800-63-3/
+ [NIST Digital Identity Guidelines](https://pages.nist.gov/800-63-3/)
 
 - Cisco Networking Academy  
   Cybersecurity Fundamentals Course  
-  https://www.netacad.com/
+[Cisco Networking Academy](https://www.netacad.com/)
 
 These resources influenced the design of the password evaluation logic, including pattern detection, entropy awareness, and attacker-based thinking.
 
