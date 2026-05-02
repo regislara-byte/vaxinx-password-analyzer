@@ -1271,6 +1271,10 @@ function clearAll() {
   document.getElementById('password').type = 'password';
   document.getElementById('toggleBtn').textContent = 'SHOW';
   showPass = false;
+  if (attackMode) {
+  document.getElementById('attackLog').innerHTML =
+    '<li style="color:var(--muted)">Awaiting credential input...</li>';
+  }
   analyzePassword();
 }
 </script>
