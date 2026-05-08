@@ -688,6 +688,77 @@ h1 {
   width: auto; margin: 0;
 }
 .copy-btn:hover { background: rgba(0,255,136,0.2); filter: none; }
+
+
+/* ── Score Breakdown + Breach Check v3.2 ── */
+.score-panel {
+  border: 1px solid rgba(0,245,255,0.10);
+  border-top: 1px solid rgba(0,245,255,0.25);
+  margin-bottom: 18px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.22);
+}
+.score-header {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  padding: 8px 14px;
+  background: rgba(0,245,255,0.04);
+  border-bottom: 1px solid rgba(0,245,255,0.08);
+  opacity: 0.85;
+}
+.score-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px 14px;
+}
+.score-item {
+  display: grid;
+  grid-template-columns: 90px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: var(--text);
+}
+.score-track {
+  height: 5px;
+  background: rgba(255,255,255,0.05);
+  overflow: hidden;
+}
+.score-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--cyan);
+  transition: width .35s ease, background .35s ease;
+}
+.score-points.good { color: var(--green); }
+.score-points.bad { color: var(--red); }
+.score-points.warn { color: var(--yellow); }
+.breach-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.breach-btn {
+  padding: 6px 10px;
+  border: 1px solid rgba(0,245,255,.25);
+  color: var(--cyan);
+  background: rgba(0,245,255,.05);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.breach-btn:hover { border-color: var(--cyan); box-shadow: 0 0 14px rgba(0,245,255,.12); }
+@media (max-width: 520px) {
+  .score-item { grid-template-columns: 72px 1fr 36px; font-size: 9px; gap: 7px; }
+  .breach-row { align-items: flex-start; flex-direction: column; }
+}
+
 </style>
 </head>
 <body>
@@ -745,6 +816,16 @@ h1 {
       </div>
     </div>
 
+
+
+    <!-- Score Breakdown v3.2 -->
+    <div class="score-panel" id="scorePanel">
+      <div class="score-header">// SCORE BREAKDOWN MATRIX</div>
+      <div class="score-list" id="scoreBreakdown">
+        <div class="score-item"><span>Awaiting</span><div class="score-track"><div class="score-fill" style="width:0%"></div></div><span class="score-points warn">0</span></div>
+      </div>
+    </div>
+
     <!-- Status -->
     <div class="status-row" id="statusRow">
       <div class="status-icon" id="statusIcon">⬛</div>
@@ -776,6 +857,13 @@ h1 {
       <div class="box" style="grid-column: span 2;">
         <div class="box-label">Pattern Engine · Phrase Detection</div>
         <div class="box-value" id="patternStatus" style="font-size:11px;color:var(--muted)">— awaiting input —</div>
+      </div>
+      <div class="box" style="grid-column: span 2;">
+        <div class="box-label">Breach Intelligence · HIBP k-anonymity</div>
+        <div class="box-value breach-row" style="font-size:11px">
+          <span id="breachStatus" style="color:var(--muted)">Manual check only — no password is sent</span>
+          <button class="breach-btn" onclick="checkBreach()">CHECK BREACH</button>
+        </div>
       </div>
     </div>
 
@@ -1048,6 +1136,9 @@ function analyzePassword() {
     pct.textContent = '0%';
     patternStatus.textContent = '— awaiting input —';
     patternStatus.style.color = 'var(--muted)';
+    const breachStatus = document.getElementById('breachStatus');
+    if (breachStatus) { breachStatus.textContent = 'Manual check only — no password is sent'; breachStatus.style.color = 'var(--muted)'; }
+    updateScoreBreakdown([]);
     runPIDCheck('');
     results.innerHTML = '<li style="color:var(--muted)">Waiting for input...</li>';
     return;
@@ -1160,6 +1251,8 @@ function analyzePassword() {
   bar.style.width = percent + '%';
   pct.textContent = percent + '%';
 
+  updateScoreBreakdown(buildScoreBreakdown(password, checks, pidResult, triggeredPatterns, phrasePattern.test(password)));
+
   // Update pattern status box — PID match overrides everything with red alert
   const patternIssues = triggeredPatterns.map(p => p.label);
   const phraseCheck = phrasePattern.test(password);
@@ -1237,6 +1330,94 @@ function analyzePassword() {
   }).join('');
 
   updateAttackLog(password, checks, crackTime.textContent, threatClass.textContent);
+}
+
+
+function buildScoreBreakdown(password, checks, pidResult, triggeredPatterns, phraseDetected) {
+  if (!password) return [];
+  const items = [];
+  const lengthPoints = password.length >= 16 ? 2 : password.length >= 12 ? 1 : password.length >= 8 ? 0 : -1;
+  items.push({ label: 'Length', points: lengthPoints, max: 2 });
+
+  let diversity = 0;
+  if (/[A-Z]/.test(password)) diversity++;
+  if (/[a-z]/.test(password)) diversity++;
+  if (/[0-9]/.test(password)) diversity++;
+  if (/[^A-Za-z0-9]/.test(password)) diversity++;
+  items.push({ label: 'Diversity', points: diversity, max: 4 });
+
+  let patternPenalty = 0;
+  if (/(.)\1{2,}/.test(password)) patternPenalty--;
+  if (/(?:012|123|234|345|456|567|678|789|abc|bcd|cde|def)/i.test(password)) patternPenalty--;
+  patternPenalty -= triggeredPatterns.length > 0 ? 1 : 0;
+  patternPenalty -= phraseDetected ? 1 : 0;
+  items.push({ label: 'Patterns', points: patternPenalty, max: 0 });
+
+  const weakWords = ['password','admin','qwerty','welcome','letmein','123456','iloveyou','monkey','dragon','master'];
+  const dictionaryPenalty = weakWords.some(w => password.toLowerCase().includes(w)) ? -2 : 0;
+  items.push({ label: 'Dictionary', points: dictionaryPenalty, max: 0 });
+
+  const identityPenalty = pidResult.flagged ? -2 : 0;
+  items.push({ label: 'Identity', points: identityPenalty, max: 0 });
+  return items;
+}
+
+function updateScoreBreakdown(items) {
+  const el = document.getElementById('scoreBreakdown');
+  if (!el) return;
+  if (!items.length) {
+    el.innerHTML = '<div class="score-item"><span>Awaiting</span><div class="score-track"><div class="score-fill" style="width:0%"></div></div><span class="score-points warn">0</span></div>';
+    return;
+  }
+  el.innerHTML = items.map(item => {
+    const good = item.points > 0;
+    const bad = item.points < 0;
+    const cls = good ? 'good' : bad ? 'bad' : 'warn';
+    const width = item.max > 0 ? Math.max(0, Math.min(100, Math.round((item.points / item.max) * 100))) : (bad ? Math.min(100, Math.abs(item.points) * 45) : 8);
+    const bg = good ? 'var(--green)' : bad ? 'var(--red)' : 'var(--yellow)';
+    const sign = item.points > 0 ? '+' : '';
+    return `<div class="score-item"><span>${item.label}</span><div class="score-track"><div class="score-fill" style="width:${width}%;background:${bg}"></div></div><span class="score-points ${cls}">${sign}${item.points}</span></div>`;
+  }).join('');
+}
+
+async function sha1Hex(text) {
+  const data = new TextEncoder().encode(text);
+  const hash = await crypto.subtle.digest('SHA-1', data);
+  return [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+
+async function checkBreach() {
+  const password = document.getElementById('password').value;
+  const el = document.getElementById('breachStatus');
+  if (!el) return;
+  if (!password) {
+    el.textContent = 'Enter a sample password first';
+    el.style.color = 'var(--yellow)';
+    return;
+  }
+  el.textContent = 'Hashing locally...';
+  el.style.color = 'var(--cyan)';
+  try {
+    const hash = await sha1Hex(password);
+    const prefix = hash.slice(0, 5);
+    const suffix = hash.slice(5);
+    el.textContent = 'Checking k-anonymous range...';
+    const res = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`);
+    if (!res.ok) throw new Error('Breach API unavailable');
+    const text = await res.text();
+    const line = text.split('\n').find(row => row.split(':')[0].trim().toUpperCase() === suffix);
+    if (line) {
+      const count = line.split(':')[1].trim();
+      el.textContent = `🚨 Found in breach corpus ${Number(count).toLocaleString()} time(s) — replace immediately`;
+      el.style.color = 'var(--red)';
+    } else {
+      el.textContent = '✔ Not found in HIBP range response — still use unique passwords';
+      el.style.color = 'var(--green)';
+    }
+  } catch (err) {
+    el.textContent = 'Breach check unavailable — offline/CORS/network issue';
+    el.style.color = 'var(--yellow)';
+  }
 }
 
 function generatePassphrase() {

@@ -1,4 +1,4 @@
-# 🛡️ VAXINX Password Analyzer
+# 🛡️ VAXINX Password Analyzer v3.2
 
 [![Status](https://img.shields.io/badge/status-active-brightgreen)
 [![Tech](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)
@@ -59,6 +59,9 @@ Built using AI-assisted development, it focuses on:
   - Predictable structures  
 - 🔐 Secure passphrase generator  
 - 🎨 VAXINX cyber UI (glow, grid, scanlines)
+- 📈 Score Breakdown Matrix showing point contribution by category
+- 🧬 HaveIBeenPwned k-anonymity breach check: only SHA-1 prefix is sent, never the full password
+- ⚔️ Attack Simulation Mode for awareness training
 
 ---
 
@@ -138,6 +141,17 @@ These resources influenced the design of the password evaluation logic, includin
 **This project is an independent educational implementation and is not affiliated with or endorsed by NIST or Cisco.**
 
 ---
+
+## 🆕 v3.2 Upgrade Notes
+
+This version adds:
+
+- **Score Breakdown Matrix** — shows why a credential passed or failed.
+- **HIBP Breach Intelligence** — checks whether a password hash appears in known breach data using k-anonymity.
+- **Expanded Pattern Engine** — highlights identity-linked passwords, repetitions, dates, and predictable structures.
+- **Attack Simulation Log** — explains likely attack paths in defender-friendly language.
+
+> Privacy note: the breach checker hashes locally and sends only the first 5 SHA-1 characters to the range API. Do not test real passwords.
 
 ## 🧩 Future Upgrades
 
