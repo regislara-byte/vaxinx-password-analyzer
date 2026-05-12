@@ -14,8 +14,13 @@ git commit -m "%msg%"
 
 git push
 
-start https://regislara-byte.github.io/vaxinx-password-analyzer/
+echo Opening live site...
+timeout /t 2 >nul
+
+cmd /c start "" "https://regislara-byte.github.io/vaxinx-password-analyzer/"
 
 echo.
-echo Push complete.
+echo ================================
+echo DEPLOY COMPLETE
+echo ================================
 pause
