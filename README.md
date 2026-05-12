@@ -1,10 +1,9 @@
 # 🛡️ VAXINX Password Analyzer v3.2
 
-[![Status](https://img.shields.io/badge/status-active-brightgreen)
-[![Tech](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)
-[![Security](https://img.shields.io/badge/focus-cybersecurity-red)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Tech](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)
+![Security](https://img.shields.io/badge/focus-cybersecurity-red)
 [![Live Demo](https://img.shields.io/badge/Live-Demo-00f5ff?style=for-the-badge)](https://regislara-byte.github.io/vaxinx-password-analyzer/)
-
 > **Think like an attacker. Test like a defender.**
 
 ---
@@ -170,23 +169,23 @@ This version adds:
 <div align="center">
 
 <a href="https://github.com/regislara-byte">
-  <img src="./assets/socialicons/github-icon.svg" width="52">
+  <img src="./assets/social_icons_vectors/github-icon.svg" width="52">
 </a>
 
 <a href="https://ph.pinterest.com/UrlLifeNuggets/">
-  <img src="./assets/socialicons/pinterest-icon.svg" width="52">
+  <img src="./assets/social_icons_vectors/pinterest-icon.svg" width="52">
 </a>
 
 <a href="https://www.teepublic.com/user/urlifenuggets">
-  <img src="./assets/socialicons/teepublic-icon.svg" width="52">
+  <img src="./assets/social_icons_vectors/teepublic-icon.svg" width="52">
 </a>
 
 <a href="#">
-  <img src="./assets/socialicons/spotify-icon.svg" width="52">
+  <img src="./assets/social_icons_vectors/spotify-icon.svg" width="52">
 </a>
 
 <a href="#">
-  <img src="./assets/socialicons/discord-icon.svg" width="52">
+  <img src="./assets/social_icons_vectors/discord-icon.svg" width="52">
 </a>
 
 </div>
@@ -207,6 +206,31 @@ The VAXINX system uses **Visual Lore Artifacts (VLA)** to document UI evolution,
 ![Printer Icon](./assets/visualoreartifacts/printer_icon.jpeg)
 
 ---
+
+
+---
+
+## 📂 Asset Architecture
+
+```text
+assets/
+├── social_icons_vectors/
+│   ├── github-icon.svg
+│   ├── discord-icon.svg
+│   ├── pinterest-icon.svg
+│   ├── spotify-icon.svg
+│   └── teepublic-icon.svg
+│
+└── visualoreartifacts/
+    ├── preview.jpeg
+    ├── printer.jpeg
+    └── printer_icon.jpeg
+```
+
+```text
+social_icons_vectors = SVG platform identity layer
+visualoreartifacts   = VLA memory / project evolution layer
+```
 
 ## 👤 Creator
 
