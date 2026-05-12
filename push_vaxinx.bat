@@ -14,6 +14,7 @@ git commit -m "%msg%"
 
 git push
 
+echo.
 echo Opening live site...
 timeout /t 2 >nul
 
