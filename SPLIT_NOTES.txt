@@ -1,0 +1,11 @@
+VAXINX Password Analyzer split build
+
+Replace your repo root files with:
+- index.html
+- style.css
+- app.js
+
+Keep your folder:
+assets/social_icons_vectors/
+
+Then run ./push_vaxinx.bat
