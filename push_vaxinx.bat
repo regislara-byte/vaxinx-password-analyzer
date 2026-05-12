@@ -14,6 +14,8 @@ git commit -m "%msg%"
 
 git push
 
+start https://regislara-byte.github.io/vaxinx-password-analyzer/
+
 echo.
 echo Push complete.
 pause
