@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <rect width="512" height="512" rx="80" fill="#E4405F"/>
+  <text x="50%" y="54%" text-anchor="middle"
+        font-family="Arial"
+        font-size="110"
+        font-weight="bold"
+        fill="white">I</text>
+</svg>

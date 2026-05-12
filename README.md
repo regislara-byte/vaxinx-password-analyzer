@@ -163,6 +163,51 @@ This version adds:
 
 ---
 
+---
+
+## 🌐 VAXINX Ecosystem Links
+
+<div align="center">
+
+<a href="https://github.com/regislara-byte">
+  <img src="./assets/socialicons/github-icon.svg" width="52">
+</a>
+
+<a href="https://ph.pinterest.com/UrlLifeNuggets/">
+  <img src="./assets/socialicons/pinterest-icon.svg" width="52">
+</a>
+
+<a href="https://www.teepublic.com/user/urlifenuggets">
+  <img src="./assets/socialicons/teepublic-icon.svg" width="52">
+</a>
+
+<a href="#">
+  <img src="./assets/socialicons/spotify-icon.svg" width="52">
+</a>
+
+<a href="#">
+  <img src="./assets/socialicons/discord-icon.svg" width="52">
+</a>
+
+</div>
+
+---
+
+## 📸 Visual Lore Artifacts (VLA)
+
+The VAXINX system uses **Visual Lore Artifacts (VLA)** to document UI evolution, dashboard architecture, workflow states, and operational design progression.
+
+### 🔹 Password Analyzer UI
+![Preview](./assets/visualoreartifacts/preview.jpeg)
+
+### 🔹 Printer Module Concept
+![Printer](./assets/visualoreartifacts/printer.jpeg)
+
+### 🔹 Printer Icon Integration
+![Printer Icon](./assets/visualoreartifacts/printer_icon.jpeg)
+
+---
+
 ## 👤 Creator
 
 **VAXINX [Regis Lara]**  
