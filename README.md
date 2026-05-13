@@ -1,4 +1,4 @@
-# 🛡️ VAXINX Password Analyzer v3.2
+# 🛡️ VAXINX Password Analyzer v5.0
 
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Tech](https://img.shields.io/badge/stack-HTML%20%7C%20CSS%20%7C%20JS-blue)
@@ -11,7 +11,7 @@
 
 # 📸 Preview
 
-![VAXINX UI](./assets/visualoreartifacts/preview.jpeg)
+![VAXINX UI](./assets/visualloreartifacts/preview_bug.jpeg)
 
 ---
 
@@ -23,40 +23,50 @@
 
 # 🧠 Overview
 
-**VAXINX Password Analyzer** is a real-time cybersecurity awareness tool built with:
+**VAXINX Password Analyzer v5.0** is a real-time cybersecurity awareness dashboard built using:
 
-- HTML5
-- CSS3
-- JavaScript
+* HTML5
+* CSS3
+* JavaScript
 
-The project demonstrates how weak credential structures can still fail even when they appear visually “complex.”
+The system demonstrates how modern attackers evaluate weak credentials using:
 
-The analyzer focuses on:
+* entropy analysis
+* behavioral prediction
+* keyboard adjacency logic
+* brute-force estimation
+* pattern recognition
+* identity-linked credential analysis
 
-- password entropy awareness
-- human behavioral weaknesses
-- attack simulation logic
-- cybersecurity education
-- visual feedback systems
+The project transforms password checking into an immersive:
 
-This transforms password checking into an **interactive cyber-defense learning experience**.
+```text
+Cyber Defense Learning Experience
+```
+
+with a futuristic HUD-inspired VAXINX interface.
 
 ---
 
 # 🎓 Educational Purpose
 
-This project was created to help users understand how attackers evaluate credentials in real-world environments.
+This project was designed for:
 
-The system demonstrates:
+* cybersecurity awareness
+* defensive education
+* interactive learning
+* visual attack simulation
+* password hygiene training
 
-- brute-force thinking
-- dictionary attack behavior
-- predictable human patterns
-- keyboard walk detection
-- identity-linked password weaknesses
-- entropy-based analysis
+The analyzer demonstrates:
 
-The objective is awareness and defensive education.
+* brute-force thinking
+* dictionary attack logic
+* predictable human behavior
+* keyboard walk detection
+* identity-linked credential risks
+* entropy-based evaluation
+* adversarial password modeling
 
 👉 Do NOT test real passwords.
 
@@ -64,32 +74,62 @@ The objective is awareness and defensive education.
 
 # ⚙️ Features
 
-- 🔍 Real-time password strength analysis
-- 📊 Entropy score calculation
-- ⏱️ Simulated crack-time estimation
-- 🚨 Threat classification engine
-- 🧠 Pattern detection logic
-- 🔐 Passphrase generator
-- 🧬 HaveIBeenPwned k-anonymity breach check
-- ⚔️ Attack Simulation Mode
-- 📈 Score Breakdown Matrix
-- 🎨 Cyberpunk VAXINX HUD UI
-- 🌌 Scanlines, glow, and grid effects
-- 📱 Responsive layout support
-- 🧩 Split frontend architecture:
-  - `index.html`
-  - `style.css`
-  - `app.js`
+## 🧠 Credential Intelligence Engine
+
+* 🔍 Real-time password analysis
+* 📊 Entropy score calculation
+* 📈 Score Breakdown Matrix
+* 🧬 Per-character entropy DNA strip
+* 🚨 Threat classification engine
+* 🎯 Personal identifier detection
+* 🧠 Expanded pattern engine
+* 🔐 Passphrase generator
+* 📋 Exportable credential reports
+
+---
+
+## ⚔️ Attack Simulation Systems
+
+* ⚔️ Adversary simulation mode
+* ⌨️ QWERTY keyboard walk detector
+* 🧩 Sequential pattern detection
+* 📅 Date/year pattern recognition
+* 📖 Dictionary-word analysis
+* 🎯 Identity-linked credential warnings
+
+---
+
+## 🌐 Hash Intelligence Layer
+
+* ⏱️ GPU crack-time estimation
+* 📉 Log-scale crack timeline
+* 🧪 MD5 / NTLM / SHA-256 / SHA-512 estimates
+* 🛡️ bcrypt / Argon2 / scrypt comparison
+* 🌐 Online vs offline attack modeling
+* 🧬 HIBP k-anonymity breach check
+
+---
+
+## 🎨 VAXINX HUD Interface
+
+* 🌌 Cyberpunk VAXINX UI
+* 📡 Animated boot sequence
+* 🧪 LIVE telemetry feed
+* 📊 SVG radial gauge
+* 🌐 Scanlines + glow effects
+* 🧬 Tactical cyber dashboard layout
+* 📱 Responsive design support
 
 ---
 
 # 🧪 Example Credentials
 
-| Password | Result | Reason |
-|---|---|---|
-| `April012000` | 🔴 CRITICAL | Predictable date pattern |
-| `1q2w3e4r` | 🔴 WEAK | Keyboard walk detected |
-| `Tiger-Coffee!8294` | 🟢 STRONG | High entropy + unpredictability |
+| Password            | Result      | Reason                          |
+| ------------------- | ----------- | ------------------------------- |
+| `April012000`       | 🔴 CRITICAL | Predictable date pattern        |
+| `1q2w3e4r`          | 🔴 WEAK     | Keyboard walk detected          |
+| `Tiger-Coffee!8294` | 🟢 STRONG   | High entropy + unpredictability |
+| `Regis1999`         | 🎯 ID RISK  | Personal identifier detected    |
 
 ---
 
@@ -97,15 +137,15 @@ The objective is awareness and defensive education.
 
 The analyzer evaluates:
 
-- length thresholds (8 / 12 / 16+)
-- character diversity
-- symbol usage
-- repetition patterns
-- sequential structures
-- dictionary-style weaknesses
-- keyboard adjacency
-- personal identifiers
-- entropy calculations using log₂ character pools
+* password length thresholds
+* character diversity
+* symbol complexity
+* repetition patterns
+* sequential structures
+* keyboard adjacency
+* dictionary-style weaknesses
+* identity-linked information
+* entropy calculations using log₂ character pools
 
 Results map into:
 
@@ -114,6 +154,8 @@ Results map into:
 🟠 WEAK
 🟡 MODERATE
 🟢 STRONG
+🛡️ FORTRESS
+🎯 ID EXPOSURE
 ```
 
 ---
@@ -122,18 +164,20 @@ Results map into:
 
 This project applies concepts inspired by:
 
-- NIST Digital Identity Guidelines
-- Cisco Cybersecurity Fundamentals
-- Password entropy awareness models
-- Defensive security education
+* NIST Digital Identity Guidelines
+* Cisco Cybersecurity Fundamentals
+* Password entropy theory
+* Defensive security education
+* Real-world attack modeling
 
 Topics demonstrated:
 
-- brute-force attacks
-- credential stuffing
-- dictionary attacks
-- OSINT-assisted guessing
-- weak credential psychology
+* brute-force attacks
+* credential stuffing
+* dictionary attacks
+* OSINT-assisted guessing
+* keyboard adjacency attacks
+* weak credential psychology
 
 ---
 
@@ -143,10 +187,10 @@ This application runs entirely in-browser.
 
 No passwords are:
 
-- stored
-- logged
-- transmitted
-- saved remotely
+* stored
+* logged
+* transmitted
+* saved remotely
 
 The HIBP integration uses:
 
@@ -160,63 +204,41 @@ Only the first 5 hash characters are transmitted.
 
 ---
 
-# 🆕 v3.2 Upgrade Notes
+# 🆕 v5.0 Upgrade Notes
 
 This release introduced:
 
-- 📈 Score Breakdown Matrix
-- 🧬 HIBP Breach Intelligence
-- ⚔️ Attack Simulation Mode
-- 🧠 Expanded Pattern Engine
-- 🎨 Enhanced VAXINX UI polish
-- 🌌 Cyber HUD visual refinement
-- 🧩 Split architecture:
-  - `index.html`
-  - `style.css`
-  - `app.js`
+* 📡 Animated boot sequence
+* 📊 SVG radial score gauge
+* 📉 Log-scale crack timeline
+* 🧬 DNA entropy strip
+* 🧠 Expanded threat classification
+* ⚔️ Attack Simulation Mode
+* 📈 Score Breakdown Matrix
+* 🌐 Full hash intelligence layer
+* ⌨️ Keyboard walk visualization
+* 📋 Exportable credential reports
+* 🧪 LIVE telemetry terminal feed
+* 🎯 Personal Identifier Engine
+* 🧩 Split frontend architecture
 
 ---
 
-# 🧩 Future Upgrades
+# 🧩 Split Frontend Architecture
 
-Planned enhancements:
+```text
+index.html  → UI structure
+style.css   → VAXINX HUD styling
+app.js      → analysis engine + telemetry
+```
 
-- 🎮 Cyber Challenge Mode
-- 🌐 Chrome Extension build
-- 🖥️ Desktop executable build
-- 📡 Live threat intelligence feeds
-- 📊 Dynamic entropy waveform
-- 🧠 Keyboard adjacency mapping
-- 📱 Mobile HUD optimization
-- 🔗 Shared VAXINX ecosystem styles
+This structure improves:
 
----
-
-# 🌐 VAXINX Ecosystem Links
-
-<div align="center">
-
-<a href="https://github.com/regislara-byte">
-  <img src="./assets/social_icons_vectors/github-icon.svg" width="52">
-</a>
-
-<a href="https://ph.pinterest.com/UrlLifeNuggets/">
-  <img src="./assets/social_icons_vectors/pinterest-icon.svg" width="52">
-</a>
-
-<a href="https://www.teepublic.com/user/urlifenuggets">
-  <img src="./assets/social_icons_vectors/teepublic-icon.svg" width="52">
-</a>
-
-<a href="#">
-  <img src="./assets/social_icons_vectors/spotify-icon.svg" width="52">
-</a>
-
-<a href="#">
-  <img src="./assets/social_icons_vectors/discord-icon.svg" width="52">
-</a>
-
-</div>
+* maintainability
+* scalability
+* performance
+* readability
+* modular engineering workflows
 
 ---
 
@@ -230,65 +252,82 @@ Visual Lore Artifacts (VLA)
 
 as a documentation layer for:
 
-- UI evolution
-- architecture progression
-- deployment history
-- GitHub workflow states
-- engineering memory logs
-- AI-assisted development tracking
+* UI evolution
+* architecture progression
+* deployment history
+* engineering snapshots
+* AI-assisted development logs
+* VS Code workflow memory
 
 ---
 
-## 🔹 Password Analyzer UI
+## 🔹 Preview Evolution
 
-![Preview](./assets/visualoreartifacts/preview.jpeg)
+![Preview](./assets/visualloreartifacts/preview_bug.jpeg)
 
 ---
 
-## 🔹 Claude Enhancement Audit
+## 🔹 ChatGPT Engineering Logs
 
-![Claude Audit](./assets/visualoreartifacts/claude_enhance1.jpeg)
+![ChatGPT](./assets/visualloreartifacts/chatgpt_convo1.jpeg)
+
+---
+
+## 🔹 Claude Enhancement Logs
+
+![Claude](./assets/visualloreartifacts/claude_enhance1.jpeg)
 
 ---
 
 ## 🔹 VS Code Push Workflow
 
-![Push Workflow](./assets/visualoreartifacts/vsc_push_respond.png)
+![Push Workflow](./assets/visualloreartifacts/vsc_push_respond.png)
 
 ---
 
-## 🔹 Tree Structure Evolution
+## 🔹 Repository Tree Structure
 
-![Tree Structure](./assets/visualoreartifacts/vsc_tree_structure.png)
+![Tree Structure](./assets/visualloreartifacts/vsc_tree_structure.png)
 
 ---
 
 # 📂 Repository Structure
 
 ```text
-VAXINX_PASSWORD_ANALYZER_UI/
+VAXINX_PASSWORD_ANALYZER/
 │
 ├── assets/
 │   ├── social_icons_vectors/
-│   │   ├── github-icon.svg
 │   │   ├── discord-icon.svg
+│   │   ├── github-icon.svg
+│   │   ├── instagram-icon.svg
 │   │   ├── pinterest-icon.svg
 │   │   ├── spotify-icon.svg
-│   │   └── teepublic-icon.svg
+│   │   ├── teepublic-icon.svg
+│   │   └── youtube-icon.svg
 │   │
-│   └── visualoreartifacts/
-│       ├── preview.jpeg
+│   └── visualloreartifacts/
+│       ├── chatgpt_convo1.jpeg
+│       ├── chatgpt_convo2.jpeg
+│       ├── chatgpt_convo3.jpeg
+│       ├── chatgpt_convo4.jpeg
 │       ├── claude_enhance1.jpeg
+│       ├── claude_enhance2.jpeg
+│       ├── github.png
+│       ├── preview_bug.jpeg
+│       ├── preview_old.jpeg
+│       ├── printer_icon.jpeg
+│       ├── push_vaxinx_bat.png
 │       ├── vsc_push_respond.png
 │       └── vsc_tree_structure.png
 │
-├── index.html
-├── style.css
 ├── app.js
 ├── deploy.bat
+├── index.html
 ├── push_vaxinx.bat
 ├── README.md
-└── SPLIT_NOTES.txt
+├── SPLIT_NOTES.txt
+└── style.css
 ```
 
 ---
@@ -309,45 +348,46 @@ Quick GitHub push:
 
 The deployment workflow automates:
 
-- git add
-- git commit
-- git push
-- auto-launch GitHub Pages
+* git add
+* git commit
+* git push
+* auto-launch GitHub Pages
 
 ---
 
 # 📱 Responsive Design
 
-The UI was designed for:
+The interface was designed for:
 
-- desktop HUD readability
-- mobile responsiveness
-- scalable SVG vector assets
-- cyberpunk visual consistency
-- GitHub Pages deployment
+* desktop cyber HUD readability
+* mobile responsiveness
+* tactical UI scaling
+* SVG vector rendering
+* GitHub Pages deployment
 
 ---
 
 # 🌐 VAXINX Ecosystem
 
-Connected and planned modules:
+Connected and planned systems:
 
-- VAXINX Password Analyzer
-- VAXINX Stoplight Scanner
-- VAXINX NetGuard
-- Doppio Protocol Hub
-- Cyber Codex
-- Threat Awareness Modules
+* VAXINX Password Analyzer
+* VAXINX Stoplight Scanner
+* VAXINX NetGuard
+* VAXINX Threat Dashboard
+* Cyber Awareness Modules
+* Doppio Protocol Hub
+* VAXINX Cyber Defense Stack
 
 The long-term goal is a lightweight GitHub-based cyber-defense ecosystem using:
 
-- HTML
-- CSS
-- JavaScript
-- Python
-- Batch automation
-- GitHub Pages
-- VLA engineering logs
+* HTML
+* CSS
+* JavaScript
+* Python
+* Batch automation
+* GitHub Pages
+* VLA engineering logs
 
 ---
 
@@ -364,13 +404,13 @@ https://github.com/regislara-byte
 
 # 🛠️ Tech Stack
 
-- HTML5
-- CSS3
-- JavaScript
-- SVG vectors
-- GitHub Pages
-- VS Code
-- Batch automation (`.bat`)
+* HTML5
+* CSS3
+* JavaScript
+* SVG vectors
+* GitHub Pages
+* VS Code
+* Batch automation (`.bat`)
 
 ---
 
@@ -378,13 +418,12 @@ https://github.com/regislara-byte
 
 To demonstrate applied cybersecurity concepts through:
 
-- visual interaction
-- defensive awareness
-- cyberpunk-inspired UX
-- lightweight engineering workflows
-- GitHub-first deployment systems
+* visual interaction
+* defensive awareness
+* cyberpunk-inspired UX
+* lightweight engineering workflows
+* GitHub-first deployment systems
 
 ---
 
 > **“From awareness to defense — VAXINX Protocol™.”**
-
