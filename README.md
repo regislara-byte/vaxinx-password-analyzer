@@ -261,6 +261,20 @@ as a documentation layer for:
 
 ---
 
+# 🔬 Evolution Audit
+
+The VAXINX Password Analyzer evolved through iterative AI-assisted
+cybersecurity assessment, architecture critique, and UI telemetry upgrades.
+
+The VLA system preserves:
+- design decisions
+- threat-model revisions
+- engine improvements
+- deployment history
+- engineering progression
+
+---
+
 ## 🔹 Preview Evolution
 
 ![Preview](./assets/visualloreartifacts/preview_bug.jpeg)
